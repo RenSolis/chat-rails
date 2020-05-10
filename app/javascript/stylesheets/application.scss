@@ -1,0 +1,109 @@
+body {
+  -ms-overflow-style: none;
+  overflow-y: hidden;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.chat-room {
+  max-height: calc(100vh - 100px);
+  overflow: scroll;
+
+  .navbar {
+    border-bottom: 1px solid #eee;
+    margin-left: -15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: calc(100% - 25%);
+  }
+
+  .message {
+    min-height: 59px;
+
+    .content-container {
+      display: inline-block;
+
+      .content {
+        background-color: #eee;
+        padding: 8px 16px;
+        border-radius: 20px;
+      }
+
+      .author {
+        font-size: 0.8rem;
+        color: #777;
+        margin-left: 10px;
+      }
+    }
+
+    &.me {
+      .content-container {
+        float: right;
+
+        .content {
+          background-color: #007bff;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .chat-box {
+    position: fixed;
+    bottom: 0;
+    padding: 20px;
+    width: 100%;
+    max-width: calc(100% - 26%);
+    background-color: #fff;
+    border-top: 1px solid #eee;
+
+    input[type="text"] {
+      height: 45px;
+      font-size: 18px;
+      padding: 8px;
+    }
+  }
+
+  .btn {
+    height: 45px;
+  }
+}
+
+.card.no-outlined {
+  border: none;
+}
+
+.room-link {
+  text-decoration: none !important;
+
+  .room-card {
+    .name {
+      font-weight: 600;
+      color: #000;
+    }
+
+    .member-count {
+      color: #777;
+      font-weight: light;
+    }
+
+    &.active {
+      background-color: #000;
+
+      .name {
+        color: #fff;
+      }
+
+      .member-count {
+        color: #e0e0e0;
+      }
+    }
+  }
+}
+
+.rooms-sidebar {
+  border-right: 1px solid #eee;
+}
